@@ -1,4 +1,5 @@
 import frontcontroller.FrontControllerServlet;
+import jakarta.servlet.Servlet;
 import org.apache.catalina.Context;
 import org.apache.catalina.startup.Tomcat;
 
@@ -52,8 +53,8 @@ public class WebServerLauncher {
         Tomcat.addServlet(context, "memberDetailServlet", new MemberDetailServlet());
         context.addServletMappingDecoded("/members/detail", "memberDetailServlet");
 
-//        Tomcat.addServlet(context, "frontControllerServlet", new FrontControllerServlet());
-//        context.addServletMappingDecoded("/front-controller/*", "frontControllerServlet");
+        Tomcat.addServlet(context, "frontControllerServlet", new FrontControllerServlet());
+        context.addServletMappingDecoded("/front-controller/*", "frontControllerServlet");
 
         tomcat.start();
         tomcat.getServer().await();
