@@ -40,12 +40,14 @@ public class FrontControllerServlet extends HttpServlet {
 
 
         try {
-            String viewName = controller.handleRequest(request, response);
+            ModelAndView mav = controller.handleRequest(request, response);
+            String viewName = mav.getViewName();
 
             if (viewName.startsWith("redirect:")) {
                 response.sendRedirect(viewName.substring("redirect:".length()));
             } else {
-                request.getRequestDispatcher(viewName).forward(request, response);
+                View view = new View(viewName);
+                view.render(mav.getModel(), request, response);
             }
         } catch (Exception e) {
             throw new ServletException(e);
