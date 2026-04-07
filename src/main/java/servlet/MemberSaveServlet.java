@@ -14,9 +14,6 @@ public class MemberSaveServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse res)
             throws IOException {
 
-        res.setContentType("text/html;charset=UTF-8");
-        req.setCharacterEncoding("UTF-8");
-
         String name = req.getParameter("name");
         service.save(new Member(name));
 

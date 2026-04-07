@@ -14,9 +14,6 @@ public class MemberListServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse res)
             throws ServletException, IOException {
 
-        res.setContentType("text/html;charset=UTF-8");
-        req.setCharacterEncoding("UTF-8");
-
         req.setAttribute("members", service.findAll());
 
         req.getRequestDispatcher("/WEB-INF/views/members.jsp")
