@@ -14,9 +14,6 @@ public class MemberDetailServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse res)
             throws ServletException, IOException {
 
-        res.setContentType("text/html;charset=UTF-8");
-        req.setCharacterEncoding("UTF-8");
-
         Long id = Long.parseLong(req.getParameter("id"));
 
         req.setAttribute("member", service.findById(id));
