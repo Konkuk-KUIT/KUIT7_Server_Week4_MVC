@@ -84,13 +84,13 @@
 
     <c:forEach var="m" items="${members}">
         <div class="card">
-            <a href="/members/detail?id=${m.id}" class="member-btn">
+            <a href="/first-controller/members/detail?id=${m.id}" class="member-btn">
                     ${m.name}
             </a>
         </div>
     </c:forEach>
 
-    <a href="/members/new-form" class="btn">회원 등록</a>
+    <a href="/first-controller/members/new-form" class="btn">회원 등록</a>
 </div>
 
 </body>

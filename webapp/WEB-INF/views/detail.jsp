@@ -60,7 +60,7 @@
 
 <div class="navbar">
     <div>🚀 Member App</div>
-    <a href="/home" class="home-btn">🏠 Home</a>
+    <a href="/first-controller/home" class="home-btn">🏠 Home</a>
 </div>
 
 <div class="container">
@@ -71,7 +71,7 @@
         <p>Name: ${member.name}</p>
     </div>
 
-    <a href="/members" class="btn">목록</a>
+    <a href="/first-controller/members" class="btn">목록</a>
 </div>
 
 </body>

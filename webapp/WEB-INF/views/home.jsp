@@ -62,8 +62,8 @@
 <div class="container">
     <h1>🏠 Home</h1>
 
-    <a href="/members/new-form" class="btn">회원 등록</a>
-    <a href="/members" class="btn">회원 목록</a>
+    <a href="/first-controller/members/new-form" class="btn">회원 등록</a>
+    <a href="/first-controller/members" class="btn">회원 목록</a>
 </div>
 
 </body>

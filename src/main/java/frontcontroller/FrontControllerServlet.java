@@ -1,4 +1,6 @@
 package frontcontroller;
 
-public class FrontControllerServlet {
+import jakarta.servlet.http.HttpServlet;
+
+public class FrontControllerServlet extends HttpServlet {
 }
