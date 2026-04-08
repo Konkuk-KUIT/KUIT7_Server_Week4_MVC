@@ -17,3 +17,7 @@ public class MemberFormServlet extends HttpServlet {
                 .forward(req, res);
     }
 }
+// 회원 등록 화면을 보여주기 위한 GET 요청을 받아서 new-form.jsp로 forward하는 서블릿.
+
+//얘도 jsp는 new-form 화면을 출력
+// text/html과 utf-8로 해석하겠다는 건 frontcontroller로 공통으로 묶어
