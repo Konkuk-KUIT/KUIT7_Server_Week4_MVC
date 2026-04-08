@@ -37,6 +37,7 @@ public class FrontControllerServlet extends HttpServlet {
         req.setCharacterEncoding("UTF-8");
         res.setContentType("text/html;charset=UTF-8");
 
+        //url 뽑기
         String requestURI = req.getRequestURI();
         String contextPath = req.getContextPath();
         String path = requestURI.substring(contextPath.length());

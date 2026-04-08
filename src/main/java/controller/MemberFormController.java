@@ -1,4 +1,12 @@
 package controller;
 
-public class MemberFormController {
+import frontcontroller.ModelAndView;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
+public class MemberFormController implements Controller {
+    @Override
+    public ModelAndView handle(HttpServletRequest req, HttpServletResponse res) throws Exception {
+        return new ModelAndView("/new-form");
+    }
 }
