@@ -1,7 +1,11 @@
 package controller;
 
-import frontcontroller.ModelAndView;
-import java.util.Map;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 
 public class HomeController implements Controller {
+    @Override
+    public String process(HttpServletRequest request, HttpServletResponse response) {
+        return "home";
+    }
 }
