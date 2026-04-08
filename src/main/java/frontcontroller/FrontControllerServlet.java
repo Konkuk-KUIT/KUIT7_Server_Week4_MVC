@@ -1,6 +1,6 @@
 package frontcontroller;
 
-import controller.Controller;
+import controller.*;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -17,6 +17,16 @@ public class FrontControllerServlet extends HttpServlet {
     @Override
     public void init() throws ServletException {
         super.init();
+        initHandlerMapping();
+    }
+
+    private void initHandlerMapping() {
+        handlerMapping.put("/", new HomeController());
+        handlerMapping.put("/home", new HomeController());
+        handlerMapping.put("/members/new-form", new MemberFormController());
+        handlerMapping.put("/members/save", new MemberSaveController());
+        handlerMapping.put("/members", new MemberListController());
+        handlerMapping.put("/members/detail", new MemberDetailController());
     }
 
 

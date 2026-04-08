@@ -39,6 +39,7 @@ public class WebServerLauncher {
 
         Tomcat.addServlet(context, "frontControllerServlet", new FrontControllerServlet());
         context.addServletMappingDecoded("/front-controller/*", "frontControllerServlet");
+        context.addServletMappingDecoded("/", "frontControllerServlet");
 
         tomcat.start();
         tomcat.getServer().await();

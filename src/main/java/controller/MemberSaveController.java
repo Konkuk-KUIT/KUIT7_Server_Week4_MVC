@@ -13,7 +13,7 @@ public class MemberSaveController implements Controller {
     public ModelAndView handle(HttpServletRequest req, HttpServletResponse res) throws Exception {
         String name = req.getParameter("name");
         service.save(new Member(name));
-        res.sendRedirect("/members");
+        res.sendRedirect("/front-controller/members");
         return null;
     }
 }
