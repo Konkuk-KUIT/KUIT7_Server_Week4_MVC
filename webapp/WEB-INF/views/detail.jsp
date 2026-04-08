@@ -71,7 +71,7 @@
         <p>Name: ${member.name}</p>
     </div>
 
-    <a href="/members" class="btn">목록</a>
+    <a href="/front-controller/members" class="btn">목록</a>
 </div>
 
 </body>
