@@ -1,4 +1,12 @@
 package controller;
 
-public class MemberListController {
+import frontcontroller.ModelAndView;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
+public class MemberListController implements Controller {
+	@Override
+	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) {
+		return new ModelAndView("members");
+	}
 }
