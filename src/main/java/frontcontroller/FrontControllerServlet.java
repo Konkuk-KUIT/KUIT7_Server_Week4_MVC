@@ -29,6 +29,8 @@ public class FrontControllerServlet extends HttpServlet {
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
+		req.setCharacterEncoding("UTF-8");
+		resp.setContentType("text/html;charset=UTF-8");
 
 		String requestURI = req.getRequestURI();
 		String contextPath = req.getContextPath();
@@ -43,6 +45,12 @@ public class FrontControllerServlet extends HttpServlet {
 		ModelAndView mv = controller.process(req, resp);
 		if (mv == null) {
 			resp.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+			return;
+		}
+
+		if (mv.getViewName().startsWith("redirect:")) {
+			String redirectPath = mv.getViewName().substring("redirect:".length());
+			resp.sendRedirect(contextPath + redirectPath);
 			return;
 		}
 
