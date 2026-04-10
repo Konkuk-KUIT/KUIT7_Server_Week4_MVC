@@ -50,7 +50,7 @@ public class FrontControllerServlet extends HttpServlet {
 
 		if (mv.getViewName().startsWith("redirect:")) {
 			String redirectPath = mv.getViewName().substring("redirect:".length());
-			resp.sendRedirect(contextPath + redirectPath);
+			resp.sendRedirect(contextPath + "/front-controller" + redirectPath);
 			return;
 		}
 
