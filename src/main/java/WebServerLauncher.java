@@ -20,13 +20,12 @@ public class WebServerLauncher {
 
         tomcat.getConnector();
 
-        // 현재 프로젝트 기준 디렉토리
         String absolutePath = new File(webappDirLocation).getAbsolutePath();
 
         Context context = tomcat.addWebapp("", absolutePath);
 
-        // classes 경로 설정 (중요🔥)
-        File additionWebInfClasses = new File("build/classes/java/main");
+        // classes 경로 설정
+        File additionWebInfClasses = new File("out/production/classes");
         context.setResources(new org.apache.catalina.webresources.StandardRoot(context));
         context.getResources().addPreResources(
                 new org.apache.catalina.webresources.DirResourceSet(
@@ -52,8 +51,8 @@ public class WebServerLauncher {
         Tomcat.addServlet(context, "memberDetailServlet", new MemberDetailServlet());
         context.addServletMappingDecoded("/members/detail", "memberDetailServlet");
 
-//        Tomcat.addServlet(context, "frontControllerServlet", new FrontControllerServlet());
-//        context.addServletMappingDecoded("/front-controller/*", "frontControllerServlet");
+        Tomcat.addServlet(context, "frontControllerServlet", new FrontControllerServlet());
+        context.addServletMappingDecoded("/front-controller/*", "frontControllerServlet");
 
         tomcat.start();
         tomcat.getServer().await();
