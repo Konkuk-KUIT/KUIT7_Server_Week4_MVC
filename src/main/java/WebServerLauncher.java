@@ -26,7 +26,7 @@ public class WebServerLauncher {
         Context context = tomcat.addWebapp("", absolutePath);
 
         // classes 경로 설정 (중요🔥)
-        File additionWebInfClasses = new File("build/classes/java/main");
+        File additionWebInfClasses = new File("out/production/classes");
         context.setResources(new org.apache.catalina.webresources.StandardRoot(context));
         context.getResources().addPreResources(
                 new org.apache.catalina.webresources.DirResourceSet(
@@ -37,7 +37,7 @@ public class WebServerLauncher {
                 )
         );
 
-        Tomcat.addServlet(context, "homeServlet", new HomeServlet());
+/*        Tomcat.addServlet(context, "homeServlet", new HomeServlet());
         context.addServletMappingDecoded("/home", "homeServlet");
 
         Tomcat.addServlet(context, "memberFormServlet", new MemberFormServlet());
@@ -50,10 +50,10 @@ public class WebServerLauncher {
         context.addServletMappingDecoded("/members", "memberListServlet");
 
         Tomcat.addServlet(context, "memberDetailServlet", new MemberDetailServlet());
-        context.addServletMappingDecoded("/members/detail", "memberDetailServlet");
+        context.addServletMappingDecoded("/members/detail", "memberDetailServlet");*/
 
-//        Tomcat.addServlet(context, "frontControllerServlet", new FrontControllerServlet());
-//        context.addServletMappingDecoded("/front-controller/*", "frontControllerServlet");
+        Tomcat.addServlet(context, "frontControllerServlet", new FrontControllerServlet());
+        context.addServletMappingDecoded("/front-controller/*", "frontControllerServlet");
 
         tomcat.start();
         tomcat.getServer().await();
