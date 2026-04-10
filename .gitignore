@@ -40,3 +40,13 @@ bin/
 
 ### Mac OS ###
 .DS_Store
+
+# Embedded Tomcat work directory
+tomcat.8080/
+tomcat.*/
+
+# IntelliJ personal settings
+.idea/misc.xml
+.idea/gradle.xml
+.idea/vcs.xml
+.idea/workspace.xml
