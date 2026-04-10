@@ -52,8 +52,8 @@ public class WebServerLauncher {
         Tomcat.addServlet(context, "memberDetailServlet", new MemberDetailServlet());
         context.addServletMappingDecoded("/members/detail", "memberDetailServlet");
 
-        Tomcat.addServlet(context, "frontControllerServlet", new FrontControllerServlet());
-        context.addServletMappingDecoded("/front-controller/*", "frontControllerServlet");
+//        Tomcat.addServlet(context, "frontControllerServlet", new FrontControllerServlet());
+//        context.addServletMappingDecoded("/front-controller/*", "frontControllerServlet");
 
         tomcat.start();
         tomcat.getServer().await();
