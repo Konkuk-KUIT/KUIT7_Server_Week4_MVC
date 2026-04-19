@@ -23,3 +23,6 @@ public class MemberListServlet extends HttpServlet {
                 .forward(req, res);
     }
 }
+
+// 회원 목록을 조회해서 request에 members라는 이름으로 담고, members.jsp로 넘겨
+// 화면에 출력하게 한다.
